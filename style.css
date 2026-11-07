@@ -177,6 +177,7 @@ textarea {
     gap: 1rem;
     flex: 1;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 
@@ -212,7 +213,7 @@ footer {
 }
 
 /* Responsividade para telas estreitas */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -229,6 +230,6 @@ footer {
 
     .form-row { 
         flex-direction: column;
-        gap: 0;
+        gap: 1.2rem;
     }
 }
