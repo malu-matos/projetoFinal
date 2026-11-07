@@ -146,7 +146,7 @@ a.content-link:hover {
     color: #1a365d;
 }
 
-/* Estilização do Formulário e do ID */
+/* Estilização do Formulário */
 #form-contato {
     background-color: var(--pastel-green);
     border: 2px dashed #319795;
@@ -166,7 +166,7 @@ a.content-link:hover {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 240px;
+    min-width: 0; /* Impede que elementos flex estourem o container em telas menores */
 }
 
 label {
@@ -176,6 +176,7 @@ label {
 
 input, textarea {
     width: 100%;
+    max-width: 100%;
     padding: 0.8rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -211,23 +212,12 @@ button[type="submit"] {
     width: 100%;
 }
 
-/* Feedback visual de hover e focus obrigatório */
 button[type="submit"]:hover,
 button[type="submit"]:focus {
     background-color: var(--pastel-pink);
     transform: translateY(-2px);
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 209, 220, 0.6);
-}
-
-/* Rodapé */
-footer {
-    background-color: var(--card-bg);
-    border-top: 2px solid var(--pastel-green);
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    color: #666;
 }
 
 /* Responsividade para telas estreitas */
@@ -249,5 +239,10 @@ footer {
     .form-row { 
         flex-direction: column;
         gap: 1.2rem;
+    }
+
+    .form-group {
+        width: 100%;
+        min-width: 0;
     }
 }
