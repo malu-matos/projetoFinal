@@ -11,7 +11,7 @@
     --border-color: #e0dcd0;
 }
 
-/* Reset básico */
+/* Reset básico corrigido de - para * */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,11 +38,11 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
-    header h1{
-        font-family: "Comforter Brush", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
+header h1 {
+    font-family: "Comforter Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
 
 .site-title {
     font-size: 1.8rem;
@@ -146,60 +146,78 @@ a.content-link:hover {
     color: #1a365d;
 }
 
-/* Formulário */
+/* Estilização do Formulário e do ID */
 #form-contato {
     background-color: var(--pastel-green);
     border: 2px dashed #319795;
     padding: 2rem;
     border-radius: 8px;
-    text-align: center;
     margin-top: 1.5rem;
-}
-
-form input {
-    flex: 1;
-}
-
-label {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-textarea {
-    max-width: 100%;
-    min-width: 100%;
-    max-height: 10rem;
-    min-height: 2rem;
 }
 
 .form-row {
     display: flex;
     gap: 1rem;
-    flex: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
 
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 240px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: "Short Stack", cursive;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--pastel-blue);
+    box-shadow: 0 0 0 3px rgba(199, 206, 234, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 1.5rem;
+}
 
 button[type="submit"] {
     font-family: "Short Stack", cursive;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 600;
     background-color: var(--pastel-blue);
     color: var(--heading-color);
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
-    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
 }
 
-/* Feedback visual de hover obrigatório */
+/* Feedback visual de hover e focus obrigatório */
 button[type="submit"]:hover,
 button[type="submit"]:focus {
     background-color: var(--pastel-pink);
     transform: translateY(-2px);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 209, 220, 0.6);
 }
 
 /* Rodapé */
